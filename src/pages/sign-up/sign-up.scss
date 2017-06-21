@@ -2,7 +2,10 @@ page-sign-up {
     h6 {
         text-align: center;
     }
-
+    hr {
+        width: 30px;
+        border-bottom: 1px solid #CA054D;
+    }
     ion-content {
         position: absolute;
     }

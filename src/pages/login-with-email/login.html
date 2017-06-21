@@ -1,4 +1,4 @@
-<ion-content padding class="bg" scroll="false">
+<ion-content padding scroll="false">
   <h6><b>Welcome</b></h6><hr>
   
   <form [formGroup] = "loginForm">
@@ -29,13 +29,13 @@
   </form>
 
   <div>
-    <button ion-button color = "btn-login" style="color: white;" block (tap) = "login()">LOGIN</button>
+    <button ion-button color = "custom" style="color: white;" block (tap) = "login()">LOGIN</button>
     <div style="height: 20px;"></div>
-    <button ion-button block color = "btn-login" clear (tap) = "forgotPassword()"><b>Forgot your Password?</b></button>
+    <button ion-button block color = "custom" clear (tap) = "forgotPassword()"><b>Forgot your Password?</b></button>
 
     <div style="height: 80px;"></div>
 
-    <button ion-button block color = "btn-login" outline (tap) = "navigateToSignup()">SIGN UP</button>
+    <button ion-button block color = "custom" outline (tap) = "navigateToSignup()">SIGN UP</button>
   </div>
   
 

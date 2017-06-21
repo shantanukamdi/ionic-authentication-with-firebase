@@ -19,12 +19,12 @@ import { AngularFireDatabase } from 'angularfire2/database';
 
 /* Firebase config object. Need to make it dynamic. Temp hack*/
 const firebaseConfig = {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
-    storageBucket: "",
-    messagingSenderId: ""
+    apiKey: "AIzaSyD11K6nGvgYWyQLeQBNaiICZT-890B5dMM",
+    authDomain: "demoproject-e1f34.firebaseapp.com",
+    databaseURL: "https://demoproject-e1f34.firebaseio.com",
+    projectId: "demoproject-e1f34",
+    storageBucket: "demoproject-e1f34.appspot.com",
+    messagingSenderId: "556861337720"
 };
 
 @NgModule({

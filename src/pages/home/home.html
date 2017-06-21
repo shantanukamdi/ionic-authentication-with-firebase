@@ -1,12 +1,16 @@
-<ion-header  class="bg">
+<ion-header>
 
-  <ion-navbar>
-    <ion-title>home</ion-title>
+  <ion-navbar color = "custom">
+    <ion-title>Home</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <button ion-button (tap) = "logout();">Logout</button>
+  <div text-center *ngIf = "user">
+    <h4>Welcome {{ user.email }}</h4>
+    <button ion-button clear color = "custom" (tap) = "logout();">Logout</button>
+  </div>
+  
 </ion-content>

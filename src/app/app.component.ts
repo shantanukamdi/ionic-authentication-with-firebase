@@ -12,7 +12,7 @@ declare var FCMPlugin;
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = 'IntroSlider';
+  rootPage:any ;//= 'IntroSlider';
 
   constructor(platform: Platform, 
               statusBar: StatusBar,   
