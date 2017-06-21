@@ -1,9 +1,3 @@
-/* 
-  Name - Login Component
-  Functionality - For authentication of users using firebase.
-  Author - Shantanu Kamdi
-  Date - 06/06/2017
-*/
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 /* Forms module */

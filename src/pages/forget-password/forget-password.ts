@@ -1,10 +1,3 @@
-/* 
-  Name - Forget Password Component
-  Functionality - For sending reset password link to users incase they forget their password.
-  Author - Shantanu Kamdi
-  Date - 08/06/2017
-*/
-
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 

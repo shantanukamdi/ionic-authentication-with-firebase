@@ -1,9 +1,3 @@
-/* 
-  Name - Signup Component
-  Functionality - For registering of users using firebase.
-  Author - Shantanu Kamdi
-  Date - 07/06/2017
-*/
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 /* Forms module */
@@ -39,15 +33,9 @@ export class SignUp {
     this.form = formBuilder.group({
         fullName: [ '', Validators.required],
         emailId: ['', Validators.required],
-        phoneNumber: [ '', Validators.compose([Validators.required, Validators.minLength(10)])],
         password: [ '', Validators.required],
-        address: [''],
-        attemptNo: ['', Validators.required],
-        pincode: [ '', Validators.minLength(6)],
-        attemptDate: ['', Validators.required],
         dob: [''],
-        gender: [''],
-        typeOfCourse: ['', Validators.required]
+        gender: ['']
     });
   }
 
@@ -63,16 +51,9 @@ export class SignUp {
     let userData = {
       fullName: this.form.value.fullName,
       emailId: this.form.value.emailId,
-      phoneNumber: this.form.value.phoneNumber,
       password: Md5.hashStr(this.form.value.password),
-      address: this.form.value.address,
-      attemptNo: this.form.value.attemptNo,
-      pincode: this.form.value.pincode,
-      attemptDate: this.form.value.attemptDate,
       dob: this.form.value.dob,
-      favoriteVideos: [],
-      gender: this.form.value.gender,
-      typeOfCourse: this.form.value.typeOfCourse
+      gender: this.form.value.gender
     }
 
     /* Loader */

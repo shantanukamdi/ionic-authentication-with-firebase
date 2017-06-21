@@ -1,10 +1,3 @@
-/* 
-  Name - Auth Service 
-  Functionality - Firebase Authentication (login, register, forget password)
-  Author - Shantanu Kamdi
-  Date - 08/06/2017
-*/
-
 import { Injectable } from '@angular/core';
 /* Firebase Modules */
 import { AngularFireAuth } from 'angularfire2/auth';
