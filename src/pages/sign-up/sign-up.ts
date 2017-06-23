@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 /* Forms module */
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-/* Logger Service */
-import { Logger } from '../../providers/logger';
 /* Auth Service */
 import { AuthProvider } from '../../providers/auth';
 /* MD5 hash module */
@@ -24,7 +22,6 @@ export class SignUp {
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public formBuilder: FormBuilder,
-              private _logger: Logger,
               private _auth: AuthProvider,
               private loadingCtrl: LoadingController,
               private alertCtrl: AlertController
@@ -45,8 +42,6 @@ export class SignUp {
 
   /* Signup user method which is called in click */
   signupUser(){
-    this._logger.log('signupUser() method');
-    
     /* Creating user object using form values*/
     let userData = {
       fullName: this.form.value.fullName,
@@ -85,7 +80,6 @@ export class SignUp {
 
   /* Navigate back to login */
   navigateToLogin(){
-    this._logger.log('navigateToLogin() method');
     /* For avoiding the stacking of the same page again and again */
     this.navCtrl.setRoot('LoginWithEmailPage');
   }

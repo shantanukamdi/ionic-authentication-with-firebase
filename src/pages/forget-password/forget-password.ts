@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
-
 /* Forms module */
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-/* Logger Service */
-import { Logger } from '../../providers/logger';
 /* Auth Service */
 import { AuthProvider } from '../../providers/auth';
 
@@ -25,7 +22,6 @@ export class ForgetPasswordPage {
               public navParams: NavParams,
               public formBuilder: FormBuilder,
               private _auth: AuthProvider,
-              private _logger: Logger,
               private alertCtrl: AlertController,
               private loadingCtrl: LoadingController            
   ) {
@@ -41,8 +37,6 @@ export class ForgetPasswordPage {
 
   /* Reset Password Function */
   resetPassword(){
-    this._logger.log("resetPassword()");
-
     /* Loader */
     let loader = this.loadingCtrl.create({
       content: 'Checking Email and Sending Mail'
@@ -57,18 +51,19 @@ export class ForgetPasswordPage {
     
     /* Calling Auth Service for resetting password */
     this._auth.forgotPassword(userEmailId).then(()=>{
-      this._logger.log("Successfully sent the reset password link");
       /* Creating Alert */
       let alert = this.alertCtrl.create({
-        title: 'Email containing reset password link sent successfully',
+        title: 'Success',
+        message: 'Email containing reset password link sent successfully',
         buttons: ['Ok']
       });
 
       alert.present();
       loader.dismiss();
       this.navCtrl.pop();
+
     }, (error) => {
-      this._logger.log("Failed to send reset password link " + error);
+      console.log(error);
       /* Creating Alert */
       let alert = this.alertCtrl.create({
         title: 'Error',

@@ -4,12 +4,9 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { Keyboard } from '@ionic-native/keyboard';
-/* For Network Detection*/
-import { Network } from '@ionic-native/network';
 
 import { MyApp } from './app.component';
 import { Logger } from '../providers/logger';
-import { CustomToast } from '../providers/custom-toast';
 import { AuthProvider } from '../providers/auth';
 
 /* For Firebase Related */
@@ -50,8 +47,6 @@ const firebaseConfig = {
     Keyboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     Logger,
-    CustomToast,
-    Network,
     AuthProvider,
     AngularFireDatabase
   ]

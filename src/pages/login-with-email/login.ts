@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, LoadingController } from 'ionic-angular';
 /* Forms module */
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-/* Logger Service */
-import { Logger } from '../../providers/logger';
 /* Auth Service */
 import { AuthProvider } from '../../providers/auth';
 
@@ -24,7 +22,6 @@ export class LoginWithEmailPage {
               public navParams: NavParams,
               public formBuilder: FormBuilder,
               private _auth: AuthProvider,
-              private _logger: Logger,
               private alertCtrl: AlertController,
               private loadingCtrl: LoadingController
   ) {
@@ -41,13 +38,12 @@ export class LoginWithEmailPage {
 
   /* Navigate to Signup */
   navigateToSignup(){
-    this._logger.log('navigateToSignup()');
     this.navCtrl.setRoot('SignUp');
   }
 
   /* Login Method */
   login(){
-    this._logger.log('login()');
+ 
     /* Building user */
     let loginUserData = {
       emailId: this.loginForm.value.emailId,
@@ -65,11 +61,8 @@ export class LoginWithEmailPage {
     this._auth.authenticateAndLogin(loginUserData).then(authData => {
       loader.dismiss();
       if(authData.emailVerified){
-        this._logger.log("Successfully logged in ");
-
         /* Navigate to Home Component */    
         this.navCtrl.setRoot('HomePage');
-
       }else{
 
           const alert = this.alertCtrl.create({
